@@ -1,0 +1,25 @@
+# Docker Compose for Jetson Deployment
+services:
+  uxo-benchmark:
+    build:
+      context: .
+      dockerfile: dockerfile_test
+    container_name: uxo-benchmark
+    restart: always
+    # command: python3 main.py test --model_path ./results/best_checkpoint.pth
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - PYTHONPATH=/workspace/app
+    volumes:
+      - ./:/workspace/app
+      - ./results:/workspace/app/results
+      - ./logs:/workspace/app/logs
+      - ./dataset:/workspace/app/dataset
+    

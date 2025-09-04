@@ -1,0 +1,20 @@
+FROM nvcr.io/nvidia/pytorch:25.01-py3
+
+WORKDIR /workspace/app
+
+COPY requirements.txt .
+COPY requirements_cpu.txt .
+
+RUN apt-get update && \
+    apt-get install -y curl && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install --upgrade pip && \
+    pip3 install -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["python3", "deploy/runAPI.py", "--model_path", "./results/model.pth", "--input_size", "800", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,60 @@
+model:
+  input_size: 800  # squared input size
+  num_classes: 1    # UXO/NON-UXO binary classification
+  backbone: "mobilenet"  # resnet18, resnet50, mobilenet
+  pretrained: true
+
+training:
+  num_epochs: 100 
+  batch_size: 16 
+  test_batch_size: 1  
+  learning_rate: 4e-3
+  weight_decay: 1e-5
+  momentum: 0.9
+  scheduler: true
+  warmup_epochs: 4   # 500-1000 steps . Eg batch size 16 => 154 steps = 1 epoch => 4 epochs ~ 600 steps  .
+  early_stopping_epochs: 40
+  seed: 41
+
+testing:
+  model_path: "./results/model.pth"
+  input_size: 800
+  batch_size: 1
+  device: "auto"
+  confidence_threshold: 0.05
+  num_classes: 1
+  backbone: "mobilenet"
+  use_tensorrt: true  
+  tensorrt_precision: "FP16"  # FP16, FP32, INT8
+  log_dir: "./logs"
+  save_visualizations: true 
+
+data:
+  copy_paste_probability: 0.6
+  background_dataset: "1aurent/ADE20K"
+  dataset:
+    source: "huggingface"  # huggingface, zenodo, local
+    huggingface_name: "UXO-Politehnica-Bucharest/Contextual_Vision_for_Unexploded_Ordnances"
+    zenodo_id: "1234567"  
+    local_path: "./dataset/ctxuxo"
+    auto_download: true
+    auto_extract: true
+    cleanup_archives: true
+    reorganize_structure: true
+    yaml_path: "./dataset/ctxuxo/data.yaml"
+
+logging:
+  log_dir: ./logs
+  tensorboard: true
+  save_plots: true
+
+deployment:
+  model_path: ./results/model.pth
+  port: 8000
+  host: "0.0.0.0"
+  
+hardware:
+  device: "auto"  # auto, cuda, cpu
+  min_cuda_version: 12
+  min_vram_gb: 15 
+
