@@ -53,3 +53,8 @@ Both YOLO and COCO annotation formats are supported. The dataset is structured i
 The first repository includes unannotated images, divided into the same three subsets, with the data split performed using the Multilabel Stratified Shuffle Split algorithm to maintain class balance. The distribution follows a 70% training portion, with 15% allocated to both validation and test sets. 
 
 For binary detection and classification, 15 449 instances can be utilized (UXO/NON-UXO). Moreover, classification into specific classes (Mortar Bomb, Projectile, Grenade, Aviation Bomb, RPG, LandMine, Rockets, AntiSubmarine, Cartridge, Fuse) is feasible by labeling the data accordingly: 6 121 instances of projectiles, 4 269 instances of mortar bombs, 3 399 instances of grenades, 987 Cartridge, 333 Aviation Bombs, 124 Cartridge Magazine, 92 Fuses, 63 rocket-propelled grenades, 29 Landmines, 21 rockets, 6 antisubmarine, 5 sea mine. Instances can appear individually or within the same images, ensuring high diversity.
+
+## Manual Download Links:
+- [Zenodo](https://zenodo.org/records/17052675)
+- [DataPort](https://ieee-dataport.org/documents/ctx-uxo-comprehensive-dataset-detection-and-identification-unexploded-ordnances)
+- [Hugging Face](https://huggingface.co/datasets/UXO-Politehnica-Bucharest/Contextual_Vision_for_Unexploded_Ordnances) 
