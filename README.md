@@ -27,7 +27,6 @@ The CTX-UXO dataset has been rigorously validated using a wide range of deep lea
   title     = {Detection and Identification of Unexploded Ordnance using a Two-Step Deep Learning Methodology},
   booktitle = {Proceedings of the 32nd Mediterranean Conference on Control and Automation (MED)},
   year      = {2024},
-  pages     = {1--6},
   address   = {Chania, Greece},
   month     = {June 11--14}
 }
@@ -37,7 +36,6 @@ The CTX-UXO dataset has been rigorously validated using a wide range of deep lea
   title     = {Evaluation of the Robustness-Runtime Efficiency Trade-Off of Edge AI Models in UXO Localisation and Classification},
   booktitle = {Proceedings of the 33rd Mediterranean Conference on Control and Automation (MED)},
   year      = {2025},
-  pages     = {1--6},
   address   = {Tangier, Morocco},
   month     = {June 10--13}
 }
