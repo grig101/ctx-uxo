@@ -25,9 +25,9 @@ The framework automatically downloads the dataset when not found locally. Datase
 ```
 
 ### Manual Download Links:
-- [Hugging Face](https://huggingface.co/datasets/UXO-Politehnica-Bucharest/Contextual_Vision_for_Unexploded_Ordnances) 
+- [Zenodo](https://zenodo.org/records/17052675)
 - [DataPort](https://ieee-dataport.org/documents/ctx-uxo-comprehensive-dataset-detection-and-identification-unexploded-ordnances)
-- [Zenodo](http://link.com/)
+- [Hugging Face](https://huggingface.co/datasets/UXO-Politehnica-Bucharest/Contextual_Vision_for_Unexploded_Ordnances) 
 
 ## Quick Start
 
